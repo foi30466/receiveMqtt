@@ -25,7 +25,14 @@ public class receiveMqtt {
 
 
             SUSListener myListener = new SUSListener();
-            sampleClient.subscribe("test_topic/#", myListener);
+            // For defined String topic (15)
+            // sampleClient.subscribe(topic, myListener);
+
+            // Listening to any topic: #-Filter (Multi-Layer Wildcard) -> all channels
+            // sampleClient.subscribe("test_topic/#", myListener);
+
+            // Listening to a specific topic: +-Filter (Single-Level Wildcard) -> one channel
+            sampleClient.subscribe("test_topic/+", myListener);
 
             while (1==1){
                 try {Thread.sleep(1000);
