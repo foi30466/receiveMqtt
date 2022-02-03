@@ -10,9 +10,10 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class receiveMqtt {
 
     public static void main(String[] args) {
-        String broker = "tcp://192.168.178.33:1883";
+        // Localhost
+        String broker = "tcp://192.168.178.83:1883";
         String clientId = "SUSSender";
-        // String topic = "test_topic";
+        String topic = "test_topic";
         MemoryPersistence persistence = new MemoryPersistence();
 
         try {
@@ -29,10 +30,10 @@ public class receiveMqtt {
             // sampleClient.subscribe(topic, myListener);
 
             // Listening to any topic: #-Filter (Multi-Layer Wildcard) -> all channels
-            // sampleClient.subscribe("test_topic/#", myListener);
+            sampleClient.subscribe("any_topic/#", myListener);
 
             // Listening to a specific topic: +-Filter (Single-Level Wildcard) -> one channel
-            sampleClient.subscribe("test_topic/+", myListener);
+            // sampleClient.subscribe("test_topic/+", myListener);
 
             while (1==1){
                 try {Thread.sleep(1000);
