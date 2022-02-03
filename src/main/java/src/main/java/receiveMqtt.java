@@ -30,7 +30,7 @@ public class receiveMqtt {
             sampleClient.subscribe(topic, myListener);
 
             // Listening to any topic: #-Filter (Multi-Layer Wildcard) -> all channels
-            // sampleClient.subscribe("any_topic/#", myListener);
+            // sampleClient.subscribe("test_topic/#", myListener);
 
             // Listening to a specific topic: +-Filter (Single-Level Wildcard) -> one channel
             // sampleClient.subscribe("test_topic/+", myListener);
